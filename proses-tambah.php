@@ -6,20 +6,21 @@ include("../koneksi.php");
 //mengecek apakah tombol 'simpan' telah ditekan
 if(isset($_POST['simpan'])) {
     /*mengambil nilai dari form input dan menyimpannya ke dalam variabel*/
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $judul_lagu = $_POST['judul_lagu'];
+    $artis = $_POST['artis'];
+    $durasi = $_POST['durasi'];
 
-    /*menyusun query SQL untuk menambahkan data ke tabel 'pengguna' */
-    $sql = "INSERT INTO Pengguna (username, email) VALUES ('$username','$email')";
+    /*menyusun query SQL untuk menambahkan data ke tabel 'lagu' */
+    $sql = "INSERT INTO lagu (judul_lagu, artis, durasi) VALUES ('$judul_lagu','$artis','$durasi')";
 
     //menjalankan query dan menyimpan hasilnya dalam variabel $query
     $query = mysqli_query($db, $sql);
 
     //simpan pesan di sesi
     if ($query) {
-        $_SESSION['notifikasi'] = "Pengguna berhasil ditambahkan!";
+        $_SESSION['notifikasi'] = "Lagu berhasil ditambahkan!";
     } else {
-        $_SESSION['notifikasi'] = "Pengguna gagal ditambahkan!";
+        $_SESSION['notifikasi'] = "Lagu gagal ditambahkan!";
     }
     header('Location: index.php');
 } else {

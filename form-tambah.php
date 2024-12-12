@@ -4,16 +4,20 @@
     <title>MUSIC STREAMING</title>
 </head>
 <body>
-    <h3>Tambah Pengguna</h3>
+    <h3>Tambah Lagu</h3>
     <form action="proses-tambah.php" method="POST">
         <table border="0">
             <tr>
-                <td>Username</td>
-                <td><input type"text" name="username" required></td>
+                <td>Judul Lagu</td>
+                <td><input type"text" name="judul_lagu" required></td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><input type="text" name="email"></td>
+                <td>Artis</td>
+                <td><input type="text" name="artis" required></td>
+            </tr>
+            <tr>
+            <td>Durasi</td>
+            <td><input type"text" name="durasi"></td>
             </tr>
         </table>
         <button type="submit" name="simpan">Simpan</button>
